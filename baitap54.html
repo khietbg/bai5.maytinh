@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+<div>
+<table border="1" style="width: 500px">
+    <tr><td colspan="4"><input style="width: 450px" id="Calculator" type="text"></td></tr>
+    <tr>
+        <td><button onclick="inputCalculator('1')">1</button></td>
+        <td><button onclick="inputCalculator('2')">2</button></td>
+        <td><button onclick="inputCalculator('3')">3</button></td>
+        <td><button onclick="inputCalculator('+')">+</button></td>
+    </tr>
+    <tr><td><button onclick="result()">=</button></td>
+        <td><button onclick="clearCalculator()"></button></td>
+    </tr>
+</table>
+</div>
+<script>
+    function inputCalculator(input){
+        document.getElementById('Calculator').value += input;
+        // console.log('input----->')
+    }
+    function result(){
+        let input = document.getElementById('Calculator').value;
+        let result = eval(input);
+        document.getElementById('Calculator').value = result;
+    }
+    function clearCalculator(){
+        let clear = document.getElementById('Calculator').value = '';
+    }
+</script>
+</body>
+</html>
